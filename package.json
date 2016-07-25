@@ -1,0 +1,18 @@
+{
+  "name": "parkingduuzend",
+  "version": "1.0.0",
+  "description": "Parking9Duuzend project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Pieter-Jan Geeroms",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "jsonld": "^0.4.11"
+  }
+}

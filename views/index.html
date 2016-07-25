@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> - My Site</title>
+    <link rel="stylesheet" href="/css/parking.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="first"> <a>Parking</a></h1>
+      <h1 class="second">
+        <div class="line"></div><a>Negenduusd</a>
+      </h1>
+    </header>
+    <main>
+      <section class="items">
+        <article>
+          <h2></h2>
+          <p>address</p><a href="http://www.google.com/maps/place/?"><img class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|?,?&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name"></a>
+          <div>
+            <p>parkingContact</p>
+            <div>openStatus</div>
+            <meter min="0" max="totalCapacity" value="spaceOccupied"></meter>
+            <div class="spotsOpen"><span class="number">availableCapacity</span>
+              <p>VRIJE</p>
+              <p class="spots">PLAATSEN</p>
+            </div>
+            <p></p>updated: {{ parking.parkingStatus.lastModifiedDate  | date: "%D %R" }}
+            <div>
+              <div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="application/ld+json" src="{{site.baseurl}}/parking/parking.jsonld"></script>
+  </body>
+</html>

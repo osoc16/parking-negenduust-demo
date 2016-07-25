@@ -1,0 +1,22 @@
+extend layout
+block content
+  div.errors
+    if errors
+      ul
+        each error in errors
+          li= error
+  article
+    h2 
+    p 
+    p 
+    p 
+    a(href="http://www.google.com/maps/place/?")
+      | <img class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|3,51&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name">
+
+    div
+      div
+      meter(min="0" max="100" value="0")
+      div.spotsOpen
+        span.number
+        p VRIJE
+        p.spots PLAATSEN
