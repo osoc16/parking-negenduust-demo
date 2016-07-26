@@ -5,18 +5,19 @@ block content
       ul
         each error in errors
           li= error
-  article
-    h2
-    p
-    p
-    p
-    a(href="http://www.google.com/maps/place/51.053858,3.724259")
-      | <img class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|51.053858,3.724259&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name">
+          
+  each parking in data
+    article
+      h2= parking.name
+      p= parking.address
+      p= parking.contactInfo
+      a(href="http://www.google.com/maps/place/51.053858,3.724259")
+        img(class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|"+ parking.latitude +","+ parking.longitude +"&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name")
 
-    div
       div
-      meter(min="0" max="100" value="0")
-      div.spotsOpen
-        span.number
-        p VRIJE
-        p.spots PLAATSEN
+        div
+        meter(min="0" max=parking.totalCapacity value=parking.totalCapacity - parking.parkingStatus.availableCapacity)
+        div.spotsOpen
+          span.number= parking.parkingStatus.availableCapacity
+          p VRIJE
+          p.spots PLAATSEN
