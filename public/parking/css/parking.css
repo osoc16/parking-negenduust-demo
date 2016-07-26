@@ -59,11 +59,11 @@ header {
   .errors ul {
     list-style: decimal inside; }
   .errors h2 {
-    color: red;
+    color: #F44336;
     font-size: 2em;
     display: block;
     width: 100%;
-    border-bottom: 4px solid red;
+    border-bottom: 4px solid #F44336;
     margin-bottom: 15px; }
 
 /*body
@@ -118,16 +118,19 @@ h2 {
   font-size: 18px;
   color: #26C6DA; }
 
-meter {
-  width: 100%;
-  height: 1em; }
-
-meter::-webkit-meter-optimum-value {
-  background: #9CCC65;
-  -webkit-box-shadow: 3px 0px 0px rgba(0, 0, 0, 0.1); }
-
-meter::-webkit-meter-bar {
-  background: #F44336; }
+.meter {
+  height: 1em;
+  position: relative;
+  margin: 0.5em;
+  background-color: #F44336; }
+  .meter-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    background: #9CCC65;
+    box-shadow: 3px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .spotsOpen {
   font-family: "Roboto", sans-serif;

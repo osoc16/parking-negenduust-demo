@@ -22,7 +22,7 @@ app.get('/parking', function (req, res) {
   var total;
   var free;
 
-  if (json != undefined) {
+  if (typeof json !== 'undefined') {
     parsedJson = JSON.parse(json);
     errors = validateJsonld(parsedJson);
     occupied = parsedJson['dtx:parkingSpaceOccupied'];
