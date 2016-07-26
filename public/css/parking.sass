@@ -7,11 +7,6 @@ $green: #9CCC65
 
 // goes to /public/parking/css/parking.css
 
-=meterReset
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
-
 .errors
   width: 80%
   margin: 0 auto
@@ -87,8 +82,8 @@ h2
   color: $mainColor
 
 meter
-  +meterReset
   width: 100%
+  height: 1em
 
 meter::-webkit-meter-optimum-value
   background: $green
