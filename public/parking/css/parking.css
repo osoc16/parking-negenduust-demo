@@ -85,18 +85,18 @@ header {
 
 .first {
   margin-left: auto;
-  color: #17BAB6;
+  color: #26C6DA;
   font-family: "Roboto", sans-serif;
   font-size: 40px; }
 
 .second {
   display: flex;
-  color: #17BAB6;
+  color: #26C6DA;
   font-family: "Lobster Two", cursive;
   font-size: 40px; }
 
 .line {
-  background-color: #17BAB6;
+  background-color: #26C6DA;
   height: 5px;
   width: 35%;
   margin-top: 20px;
@@ -116,7 +116,7 @@ article {
 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #17BAB6; }
+  color: #26C6DA; }
 
 meter {
   -webkit-appearance: none;
