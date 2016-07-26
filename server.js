@@ -28,9 +28,6 @@ app.get('/parking', function (req, res) {
     occupied = parsedJson['dtx:parkingSpaceOccupied'];
     total = parsedJson['dtx:totalCapacity'];
     free = total - occupied;
-//    if (!parsedJson('@context')) {
-//      res.render('empty', { title: 'Home', errors: errors});
-//    }
     res.render('index',{ title : 'Home', data: parsedJson, freeSpace: free, errors : errors });
   } else {
     got(realtime).then(response => {
@@ -38,11 +35,6 @@ app.get('/parking', function (req, res) {
       res.render('empty', { title: 'Home', data: data});
     });
   }
-
-
-
-
-  //res.send(json);
 
 });
 
