@@ -2,7 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var jsonld = require('jsonld');
 var url = require('url');
+var got = require('got');
 var app = express();
+
+const realtime = "http://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json";
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -30,8 +33,10 @@ app.get('/parking', function (req, res) {
 //    }
     res.render('index',{ title : 'Home', data: parsedJson, freeSpace: free, errors : errors });
   } else {
-    console.log("No json was found");
-    res.render('empty', { title: 'Home'});
+    got(realtime).then(response => {
+      let data = JSON.parse(response.body);
+      res.render('empty', { title: 'Home', data: data});
+    });
   }
 
 
@@ -79,14 +84,6 @@ function validateJsonld(json) {
 
   return errors;
 }
-
-app.post('/json', jsonParser, function (req, res) {
-  var json = req.body;
-  var errors = validateJsonld(json);
-  res.send(errors);
-
-
-});
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
