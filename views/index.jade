@@ -15,7 +15,7 @@ block content
 
     div
       div
-      meter(min="0" max="#{data['dtx:totalCapacity']}" value="#{data['dtx:parkingSpaceOccupied']}")
+      .meter(data-max=parking.totalCapacity data-value=parking.totalCapacity-parking.parkingStatus.availableCapacity)
       div.spotsOpen
         span.number #{freeSpace}
         p VRIJE

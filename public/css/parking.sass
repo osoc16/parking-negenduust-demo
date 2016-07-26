@@ -4,6 +4,7 @@ $lobster:'Lobster Two', cursive
 $roboto: 'Roboto', sans-serif
 $mainColor: #26C6DA
 $green: #9CCC65
+$red: #F44336
 
 // goes to /public/parking/css/parking.css
 
@@ -17,11 +18,11 @@ $green: #9CCC65
     list-style: decimal inside
 
   h2
-    color: red
+    color: $red
     font-size: 2em
     display: block
     width: 100%
-    border-bottom: 4px solid red
+    border-bottom: 4px solid $red
     margin-bottom: 15px
 
 // here you can define all styles for the parking index file
@@ -81,16 +82,20 @@ h2
   font-size: 18px
   color: $mainColor
 
-meter
-  width: 100%
+.meter
   height: 1em
+  position: relative
+  margin: .50em
+  background-color: $red
 
-meter::-webkit-meter-optimum-value
-  background: $green
-  -webkit-box-shadow: 3px 0px 0px rgba(0,0,0,0.1)
-
-meter::-webkit-meter-bar
-  background: #F44336
+  &-inner
+    position: absolute
+    left: 0
+    top: 0
+    width: 10%
+    height: 100%
+    background: $green
+    box-shadow: 3px 0px 0px rgba(0,0,0,0.1)
 
 .spotsOpen
   font-family: $roboto

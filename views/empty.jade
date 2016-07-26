@@ -15,8 +15,18 @@ block content
         img(class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|"+ parking.latitude +","+ parking.longitude +"&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name")
       div
         div
-        meter(min="0" max=parking.totalCapacity value=parking.totalCapacity - parking.parkingStatus.availableCapacity)
+        .meter(data-max=parking.totalCapacity data-value=parking.totalCapacity-parking.parkingStatus.availableCapacity)
+          .meter-inner(data-total=parking.totalCapacity data-value=parking.totalCapacity-parking.parkingStatus.availableCapacity)
         div.spotsOpen
           span.number= parking.parkingStatus.availableCapacity
           p VRIJE
           p.spots PLAATSEN
+  script.
+    var meters = document.querySelectorAll('.meter-inner');
+    for (var i = 0; i < meters.length; i++) {
+      var meter = meters[i];
+      setWidth(meter, meter.dataset.value, meter.dataset.total);
+    }
+    function setWidth(meter,value,total) {
+      meter.style.width = 100 *value / total + '%';
+    }
