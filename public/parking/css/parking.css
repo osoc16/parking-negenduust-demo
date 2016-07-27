@@ -108,7 +108,7 @@ header {
 article {
   width: 80%;
   margin: auto;
-  padding-bottom: 40px; }
+  padding-bottom: 80px; }
 
 .map {
   width: 100%; }
@@ -122,19 +122,20 @@ h2 {
   height: 1em;
   position: relative;
   margin: 0.5em;
-  background-color: #F44336; }
+  background-color: #9CCC65; }
   .meter-inner {
     position: absolute;
     left: 0;
     top: 0;
     width: 10%;
     height: 100%;
-    background: #9CCC65;
+    background: #F44336;
     box-shadow: 3px 0px 0px rgba(0, 0, 0, 0.1); }
 
 .spotsOpen {
   font-family: "Roboto", sans-serif;
-  color: #9CCC65; }
+  color: #9CCC65;
+  float: right; }
   .spotsOpen .number {
     font-size: 30px;
     line-height: 25px; }
