@@ -1,0 +1,144 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.4; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: -apple-system, sans-serif; }
+
+header {
+  text-align: center; }
+  header nav ul {
+    display: flex;
+    justify-content: space-around; }
+
+.errors {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.8em;
+  color: red;
+  padding-bottom: 3em; }
+  .errors ul {
+    list-style: decimal inside; }
+  .errors h2 {
+    color: #F44336;
+    font-size: 2em;
+    display: block;
+    width: 100%;
+    border-bottom: 4px solid #F44336;
+    margin-bottom: 15px; }
+
+/*body
+ * max-width: 50em
+ * margin: 0 auto
+ * padding: 1em */
+nav {
+  margin: 1em; }
+
+.list {
+  margin-left: 2em;
+  list-style-type: disc; }
+
+img {
+  max-width: 100%; }
+
+header {
+  margin-top: 10px; }
+
+.first {
+  margin-left: auto;
+  color: #26C6DA;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px; }
+
+.second {
+  display: flex;
+  color: #26C6DA;
+  font-family: "Lobster Two", cursive;
+  font-size: 40px; }
+
+.line {
+  background-color: #26C6DA;
+  height: 5px;
+  width: 35%;
+  margin-top: 20px;
+  margin-right: 5%; }
+  @media (max-width: 440px) {
+    .line {
+      width: 15%; } }
+
+article {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 40px; }
+
+.map {
+  width: 100%; }
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #26C6DA; }
+
+.meter {
+  height: 1em;
+  position: relative;
+  margin: 0.5em;
+  background-color: #F44336; }
+  .meter-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    background: #9CCC65;
+    box-shadow: 3px 0px 0px rgba(0, 0, 0, 0.1); }
+
+.spotsOpen {
+  font-family: "Roboto", sans-serif;
+  color: #9CCC65; }
+  .spotsOpen .number {
+    font-size: 30px;
+    line-height: 25px; }
+  .spotsOpen p {
+    font-size: 18px; }
+  .spotsOpen .spots {
+    font-size: 10px; }

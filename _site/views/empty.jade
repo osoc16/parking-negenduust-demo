@@ -1,0 +1,32 @@
+extend layout
+block content
+  p(class="badge" style="position: absolute; top: 0; right: 0; display: block; text-decoration: none; color: #fff; background-color: #26C6DA; box-shadow: 0px 14.17px 19.84px rgba(0, 0, 0, 0.08); padding: 0.5em; border-bottom-left-radius: 0.5em;") live
+  div.errors
+    if errors
+      ul
+        each error in errors
+          li= error
+  each parking in data
+    article
+      h2= parking.name
+      p= parking.address
+      p= parking.contactInfo
+      a(href="http://www.google.com/maps/place/"+ parking.latitude +","+ parking.longitude)
+        img(class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|"+ parking.latitude +","+ parking.longitude +"&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name")
+      div
+        div
+        .meter(data-max=parking.totalCapacity data-value=parking.totalCapacity-parking.parkingStatus.availableCapacity)
+          .meter-inner(data-total=parking.totalCapacity data-value=parking.totalCapacity-parking.parkingStatus.availableCapacity)
+        div.spotsOpen
+          span.number= parking.parkingStatus.availableCapacity
+          p VRIJE
+          p.spots PLAATSEN
+  script.
+    var meters = document.querySelectorAll('.meter-inner');
+    for (var i = 0; i < meters.length; i++) {
+      var meter = meters[i];
+      setWidth(meter, meter.dataset.value, meter.dataset.total);
+    }
+    function setWidth(meter,value,total) {
+      meter.style.width = 100 *value / total + '%';
+    }

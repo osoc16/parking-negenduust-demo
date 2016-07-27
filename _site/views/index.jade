@@ -1,0 +1,36 @@
+extend layout
+block content
+  div.errors
+    if errors
+      ul
+        each error in errors
+          li= error
+  article
+    h2= data['dtx:parkingName']
+    p= data['dtx:parkingSiteAddress']
+    p= data['dtx:parkingLocation']
+    p= data['dtx:contactDetailsTelephoneNumber']
+    a(href="http://www.google.com/maps/place/"+data['dtx:longitude']+","+data['dtx:latitude'])
+      img(class="map" src="https://maps.googleapis.com/maps/api/staticmap?center=Ghent,Belgium&zoom=13&size=400x200&maptype=roadmap&markers=color:red|"+data['dtx:longitude']+","+data['dtx:latitude']+"&key=AIzaSyA8Tawxe7x2cpGiTpvOh35xHe8dUZsjsFg" alt="Parking Name")
+
+    div
+      div
+      .meter(data-max=data['dtx:totalCapacity'] data-value=data['dtx:totalCapacity']-data['dtx:availableCapacity'])
+        .meter-inner(data-total=data['dtx:totalCapacity'] data-value=data['dtx:totalCapacity']-data['dtx:availableCapacity'])
+      div.spotsOpen
+        span.number= freeSpace
+        p VRIJE
+        p.spots PLAATSEN
+
+      script(type="application/ld+json")
+        |!{JSON.stringify(data)}
+
+  script.
+    var meters = document.querySelectorAll('.meter-inner');
+    for (var i = 0; i < meters.length; i++) {
+      var meter = meters[i];
+      setWidth(meter, meter.dataset.value, meter.dataset.total);
+    }
+    function setWidth(meter,value,total) {
+      meter.style.width = 100 *value / total + '%';
+    }
