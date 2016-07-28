@@ -43,6 +43,11 @@ function validateJsonld(json) {
   if (json["@context"] == null) {
     errors.context = "No context was found";
   }
+
+  if (json["@id"] == null) {
+    errors.id = "No id was found";
+  }
+
   if (json["@type"] == null) {
     errors.type = "No type was found";
   }
